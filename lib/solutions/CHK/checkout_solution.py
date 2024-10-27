@@ -14,8 +14,15 @@ def checkout(skus):
     for item in skus:
         item_counts[item] = item_counts.get(item, 0) + 1
 
-    
+    total_cost = 0
+    for item, count in item_counts.items():
+        if item in offers:
+            
+        else:
+            total_cost += count * prices[item]
+
 
     raise NotImplementedError()
+
 
 
