@@ -12,4 +12,6 @@ class TestSum():
     def test_sum(self):
         assert sum_solution.compute(1, 2) == 3
 
-        assert checkout_solution.checkout("AEEB") == 130
+        assert checkout_solution.checkout("ABCDE") == 155
+        assert checkout_solution.checkout("ABCDEABCDE") == 280
+        assert checkout_solution.checkout("CCADDEEBBA") == 280
