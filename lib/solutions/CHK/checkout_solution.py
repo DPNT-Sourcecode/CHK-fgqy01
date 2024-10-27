@@ -3,7 +3,7 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    prices = {'A': 50, 'B': 30, 'C': 20, 'D': 15, 'E': 40}
+    prices = {'A': 50, 'B': 30, 'C': 20, 'D': 15, 'E': 40, 'F': 10}
     offers = {
         'A': [(5, 200), (3, 130)],
         'B': [(2, 45)],
@@ -23,8 +23,11 @@ def checkout(skus):
     for item, (required_qty, free_item) in free_offers.items():
         if item in item_counts and item_counts[item] >= required_qty:
             free_items = item_counts[item] // required_qty
-            if free_item in item_counts:
-                item_counts[free_item] = max(0, item_counts[free_item] - free_items)
+            if free_item == item:
+                item_counts[item] -= 1
+            else:
+                if free_item in item_counts:
+                    item_counts[free_item] = max(0, item_counts[free_item] - free_items)
             # else:
             #     item_counts[free_item] = 0
 
@@ -42,4 +45,5 @@ def checkout(skus):
             total_cost += count * prices[item]
 
     return total_cost
+
 
