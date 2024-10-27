@@ -58,11 +58,11 @@ def checkout(skus):
     group_count = sum(item_counts.get(item, 0) for item in group_discount_items)
     total_cost += (group_count // group_discount_qty) * group_discount_price
     # remaining_group_items = group_count % group_discount_qty
-
+    used_group_count = (group_count // group_discount_qty) * group_discount_qty
     for item in group_discount_items:
         if item in item_counts:
-            used_count = (group_count // group_discount_qty) * group_discount_qty
-            item_counts[item] -= min(item_counts[item], used_count)  # Deduct the items used for the discount
+            item_counts[item] -= min(item_counts[item], used_group_count)  # Deduct the items used for the discount
+            # item_counts[item] -= min(item_counts[item], used_count)  # Deduct the items used for the discount
             # remaining_group_items -= used_count
 
 
@@ -78,4 +78,5 @@ def checkout(skus):
             total_cost += count * prices[item]
 
     return total_cost
+
 
