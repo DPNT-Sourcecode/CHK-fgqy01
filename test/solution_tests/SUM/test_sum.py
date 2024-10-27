@@ -34,8 +34,9 @@ class TestSum():
 
         assert checkout_solution.checkout("SYXA") == 95
 
-
-
+        assert checkout_solution.checkout("KK") == 120
+        assert checkout_solution.checkout("KKK") == 190
+        assert checkout_solution.checkout("KKKK") == 240
 
 
 
