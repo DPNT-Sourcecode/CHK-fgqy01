@@ -55,6 +55,8 @@ def checkout(skus):
     # Calculates total cost
     total_cost = 0
 
+    item_counts = sorted(item_counts.items(), key=lambda x: prices[x[0]])
+
     group_count = sum(item_counts.get(item, 0) for item in group_discount_items)
     total_cost += (group_count // group_discount_qty) * group_discount_price
     # remaining_group_items = group_count % group_discount_qty
@@ -78,5 +80,6 @@ def checkout(skus):
             total_cost += count * prices[item]
 
     return total_cost
+
 
 
