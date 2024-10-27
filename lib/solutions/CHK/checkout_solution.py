@@ -57,7 +57,7 @@ def checkout(skus):
     total_cost = 0
     for item, count in item_counts.items():
         if item in offers:
-            for offer in offers[item]:
+            for offer in sorted(offers[item], key=lambda x: -x[0]):
                 offer_qty, offer_price = offer
                 offer_times_used = count // offer_qty
                 total_cost += offer_times_used * offer_price
@@ -67,5 +67,6 @@ def checkout(skus):
             total_cost += count * prices[item]
 
     return total_cost
+
 
 
