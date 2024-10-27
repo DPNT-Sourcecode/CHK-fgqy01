@@ -12,4 +12,4 @@ class TestAll():
     def TestAll(self):
         assert sum_solution.compute(1, 2) == 3
 
-        assert checkout_solution.checkout("A") == 50
+        assert checkout_solution.checkout("ABCDE") == 50
