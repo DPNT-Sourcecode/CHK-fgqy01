@@ -8,7 +8,7 @@ def checkout(skus):
         'A': [(5, 200), (3, 130)],
         'B': [(2, 45)],
     }
-    free_offers = {'E': (2, 'B')}
+    free_offers = {'E': (2, 'B'), 'F': (3, 'F')}
 
     # Validates the input
     if not all(item in prices for item in skus):
