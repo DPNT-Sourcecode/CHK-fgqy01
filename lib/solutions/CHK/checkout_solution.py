@@ -22,7 +22,7 @@ def checkout(skus):
     # Applies free offers
     for item, (required_qty, free_item) in free_offers.items():
         if item in item_counts and item_counts[item] >= required_qty:
-            free_items = item_counts[item]
+            free_items = item_counts[item] // required_qty
             if free_item in item_counts:
                 item_counts[free_item] = max(0, item_counts[free_item] - free_items)
             else:
