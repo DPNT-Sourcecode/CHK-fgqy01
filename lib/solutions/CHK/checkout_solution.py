@@ -25,8 +25,8 @@ def checkout(skus):
             free_items = item_counts[item] // required_qty
             if free_item in item_counts:
                 item_counts[free_item] = max(0, item_counts[free_item] - free_items)
-            else:
-                item_counts[free_item] = 0
+            # else:
+            #     item_counts[free_item] = 0
 
     # Calculates total cost
     total_cost = 0
@@ -42,3 +42,4 @@ def checkout(skus):
             total_cost += count * prices[item]
 
     return total_cost
+
