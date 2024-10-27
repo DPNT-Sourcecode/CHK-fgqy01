@@ -28,10 +28,10 @@ def checkout(skus):
 
     free_offers = {
         'E': (2, 'B'),
-        'F': (2, 'F'),
+        'F': (3, 'F'),
         'N': (3, 'M'),
         'R': (3, 'Q'),
-        'U': (3, 'U')
+        'U': (4, 'U')
     }
 
     # Validates the input
@@ -67,4 +67,5 @@ def checkout(skus):
             total_cost += count * prices[item]
 
     return total_cost
+
 
