@@ -10,7 +10,12 @@ def checkout(skus):
         return -1
 
     total_cost = 0
-    for item, count in item_counts.items():
+    item_counts = {}
+    for item in skus:
+        item_counts[item] = item_counts.get(item, 0) + 1
+
+    
 
     raise NotImplementedError()
+
 
