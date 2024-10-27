@@ -5,7 +5,11 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../")))
 from lib.solutions.SUM import sum_solution
 
+from lib.solutions.CHK import checkout_solution
+
+
 class TestSum():
     def test_sum(self):
         assert sum_solution.compute(1, 2) == 3
 
+        assert checkout_solution.checkout("A") == 50
