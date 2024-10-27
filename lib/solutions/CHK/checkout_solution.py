@@ -30,16 +30,13 @@ def checkout(skus):
     total_cost = 0
     for item, count in item_counts.items():
         if item in offers:
-            # Apply multi-pricing offers, prioritizing higher quantities
-            for offer in offers[item]:  # <-- Change is here
-                offer_qty, offer_price = offer  # <-- Unpack each offer tuple correctly
+            for offer in offers[item]:
+                offer_qty, offer_price = offer
                 offer_times_used = count // offer_qty
                 total_cost += offer_times_used * offer_price
                 count %= offer_qty
-            # Add remaining items at regular price
             total_cost += count * prices[item]
         else:
-            # Regular price for items without offers
             total_cost += count * prices[item]
 
     return total_cost
