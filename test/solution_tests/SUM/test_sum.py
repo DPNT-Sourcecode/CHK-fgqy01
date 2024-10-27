@@ -19,3 +19,6 @@ class TestSum():
         assert checkout_solution.checkout("AFFF") == 70
         assert checkout_solution.checkout("FFF") == 20
         assert checkout_solution.checkout("ABBFFF") == 115
+        assert checkout_solution.checkout("FFFFFF") == 40
+
+
